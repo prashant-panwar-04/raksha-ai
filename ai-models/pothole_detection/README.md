@@ -5,6 +5,8 @@ A lightweight image-based pothole detection pipeline built on colour-feature ext
 ---
 
 ## Project Structure
+
+```text
 pothole_detection/
 ├── model.py                   # Wrapper around the saved sklearn model
 ├── predict.py                 # CLI inference script for a single image
@@ -13,6 +15,7 @@ pothole_detection/
 ├── generate_sample_image.py   # Generates a sample PNG for quick testing
 ├── sample_training_data.csv   # Small synthetic dataset, ready to use
 └── requirements.txt           # Python dependencies
+```
 
 ---
 
@@ -53,15 +56,15 @@ Images are represented as **colour statistics** extracted from RGB channels. The
 
 ### Training Data Schema
 
-| Feature      | Description                           |
-|--------------|---------------------------------------|
-| `mean_red`   | Mean red channel intensity            |
-| `mean_green` | Mean green channel intensity          |
-| `mean_blue`  | Mean blue channel intensity           |
-| `std_red`    | Standard deviation of red channel     |
-| `std_green`  | Standard deviation of green channel   |
-| `std_blue`   | Standard deviation of blue channel    |
-| `label`      | `1` = pothole, `0` = no pothole       |
+| Feature      | Description                         |
+|--------------|-------------------------------------|
+| `mean_red`   | Mean red channel intensity          |
+| `mean_green` | Mean green channel intensity        |
+| `mean_blue`  | Mean blue channel intensity         |
+| `std_red`    | Standard deviation of red channel   |
+| `std_green`  | Standard deviation of green channel |
+| `std_blue`   | Standard deviation of blue channel  |
+| `label`      | `1` = pothole, `0` = no pothole     |
 
 > `label` is only required in the training CSV — not at inference time.
 
@@ -94,6 +97,8 @@ Launches the risk prediction and pothole detection demos in sequence.
 - [ ] Integrate with Raksha AI geolocation reporting pipeline
 - [ ] Add severity classification (low / medium / high)
 
+---
 
+## Part of Raksha AI
 
 This module is one component of the [Raksha AI](https://github.com/IshanSirohi/raksha-ai) platform — an intelligent road safety system combining risk analysis, pothole detection, and real-time reporting.
